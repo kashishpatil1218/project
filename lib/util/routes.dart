@@ -7,9 +7,12 @@ import '../view/Home/edite_page.dart';
 import '../view/Home/employee_edite_page.dart';
 import '../view/Home/employee_page.dart';
 import '../view/Home/heple_support_page.dart';
+import '../view/Home/notice_board.dart';
+import '../view/Home/notice_page.dart';
 import '../view/Home/privicy_policy_page.dart';
 import '../view/Home/profile_page.dart';
 import '../view/Home/student_edit_page.dart';
+import '../view/Home/teachers_page.dart';
 
 
 
@@ -23,6 +26,9 @@ Map<String, Widget Function(BuildContext)> routes = {
   // '/': (context) => EmployeePage(),//TODO page 6 employee  page
   // '/': (context) => ProfileScreen(),//TODO page 7 profile  page
   // '/': (context) => PrivacyPolicyScreen(),//TODO page 8 privicy Policy   page
-  '/': (context) => HelpSupportScreen(),//TODO page 9 heple support   page
+  // '/': (context) => HelpSupportScreen(),//TODO page 9 heple support   page
+  // '/': (context) => CreateNoticeScreen(),//TODO page 10  notice    page
+  // '/': (context) => TeachersListScreen(),//TODO page 11 teachers    page
+  '/': (context) => NoticesBoardScreen(),//TODO page 12 notice board    page
 
 };
