@@ -12,6 +12,7 @@ import '../view/Home/notice_page.dart';
 import '../view/Home/privicy_policy_page.dart';
 import '../view/Home/profile_page.dart';
 import '../view/Home/student_edit_page.dart';
+import '../view/Home/subject_page.dart';
 import '../view/Home/teachers_page.dart';
 
 
@@ -29,6 +30,8 @@ Map<String, Widget Function(BuildContext)> routes = {
   // '/': (context) => HelpSupportScreen(),//TODO page 9 heple support   page
   // '/': (context) => CreateNoticeScreen(),//TODO page 10  notice    page
   // '/': (context) => TeachersListScreen(),//TODO page 11 teachers    page
-  '/': (context) => NoticesBoardScreen(),//TODO page 12 notice board    page
+  // '/': (context) => NoticesBoardScreen(),//TODO page 12 notice board    page..................................baki
+   '/': (context) => AddSubjectScreen(),//TODO page 13 subject
+
 
 };
