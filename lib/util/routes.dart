@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project_1/view/Home/home_page.dart';
 
+import '../view/Home/attendance_page.dart';
 import '../view/Home/chat_page.dart';
+import '../view/Home/class_page.dart';
+import '../view/Home/class_routine_page.dart';
 import '../view/Home/contact_page.dart';
 import '../view/Home/edite_page.dart';
 import '../view/Home/employee_edite_page.dart';
@@ -12,6 +15,7 @@ import '../view/Home/notice_page.dart';
 import '../view/Home/privicy_policy_page.dart';
 import '../view/Home/profile_page.dart';
 import '../view/Home/student_edit_page.dart';
+import '../view/Home/subject_board.dart';
 import '../view/Home/subject_page.dart';
 import '../view/Home/teachers_page.dart';
 
@@ -31,7 +35,11 @@ Map<String, Widget Function(BuildContext)> routes = {
   // '/': (context) => CreateNoticeScreen(),//TODO page 10  notice    page
   // '/': (context) => TeachersListScreen(),//TODO page 11 teachers    page
   // '/': (context) => NoticesBoardScreen(),//TODO page 12 notice board    page..................................baki
-   '/': (context) => AddSubjectScreen(),//TODO page 13 subject
+  //  '/': (context) => AddSubjectScreen(),//TODO page 13 subject
+  //  '/': (context) => SubjectScreen(),//TODO page 14 subject board
+  //  '/': (context) => ClassScreen(),//TODO page 14 calss
+  //  '/': (context) => ClassRoutineScreen(),//TODO page 14 calss routine page    main corse bakiiiii
+   '/': (context) => AttendancePage(),//TODO page 15  attendance
 
 
 };
