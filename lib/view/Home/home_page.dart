@@ -47,6 +47,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
   //TODO calander
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,8 +58,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         leading: InkWell(
           onTap: () {
             _scaffoldKey.currentState!.openDrawer();
-              // color: Colors.blueGrey.shade800,
-
+            // color: Colors.blueGrey.shade800,
           },
           child: Image(
             image: AssetImage('asset/img/menu.png'),
@@ -88,34 +88,32 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           children: [
             DrawerHeader(
               decoration: BoxDecoration(color: Color(0xff2E435B)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  CircleAvatar(radius: 30),
-                  SizedBox(height: 10),
-                  Text(
-                    'Hamda Said',
-                    style: TextStyle(
-                      color: Color(0xff2E435B),
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+              child: Center(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CircleAvatar(radius: 30),
+                    SizedBox(width: 20),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 18),
+                      child: Text(
+                        'Hamda Said',
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-            _buildDrawerItem(Icons.dashboard, "Dashboard"),
-            _buildDrawerItem(Icons.people, "Teachers"),
-            _buildDrawerItem(Icons.school, "Students"),
-            _buildDrawerItem(Icons.notifications, "Notice"),
-            _buildDrawerItem(Icons.book, "Subject"),
-            _buildDrawerItem(Icons.schedule, "Class Routine"),
-            _buildDrawerItem(Icons.check_circle, "Attendance"),
-            _buildDrawerItem(Icons.message, "Message"),
-            _buildDrawerItem(Icons.person, "Profile"),
-            _buildDrawerItem(Icons.lock, "Privacy"),
-            _buildDrawerItem(Icons.help, "Help"),
-            _buildDrawerItem(Icons.logout, "Log out"),
+            //Listt batavo
+            buildDrawerItem('asset/img/NOTICE_DR.png','Dashhhh'),
+
           ],
         ),
       ),
@@ -693,10 +691,17 @@ Widget _buildEventCard(
     ),
   );
 }
+
 //Todo Darwer
-Widget _buildDrawerItem(IconData icon, String title) {
+Widget buildDrawerItem(String img, String title) {
   return ListTile(
-    leading: Icon(icon, color: Colors.white),
+    leading: Container(
+      height: 30,
+      width: 30,
+      decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+
+      child: Image.asset(img,fit: BoxFit.cover,height: 24,width: 24,),
+    ),
     title: Text(title, style: TextStyle(color: Colors.white)),
     onTap: () {},
   );
