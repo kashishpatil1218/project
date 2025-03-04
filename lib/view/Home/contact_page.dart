@@ -40,14 +40,7 @@ class TeacherListScreen extends StatelessWidget {
               color: Color(0xff2E435B),
               shape: BoxShape.circle,
             ),
-            child: IconButton(
-              icon: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-                size: 20,
-              ),
-              onPressed: () {},
-            ),
+            child: Image.asset('asset/img/MAIN.png'),
           ),
         ),
         actions: [
@@ -154,9 +147,7 @@ class TeacherListScreen extends StatelessWidget {
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed:() {
-        Navigator.of(context).pushNamed('/chat');
-      },),
+
     );
   }
 }

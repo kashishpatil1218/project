@@ -17,12 +17,13 @@ import '../view/Home/profile_page.dart';
 import '../view/Home/student_edit_page.dart';
 import '../view/Home/subject_board.dart';
 import '../view/Home/subject_page.dart';
+import '../view/Home/teacher_attendance.dart';
 import '../view/Home/teachers_page.dart';
 
 
 
 Map<String, Widget Function(BuildContext)> routes = {
-  '/': (context) => DashBoardScreen(), //
+  // '/': (context) => DashBoardScreen(), //1
   // '/': (context) => TeacherListScreen(),//TODO page 2---- teacher
   // '/': (context) => ChatScreen(),//TODO page 3 chat page
   // '/': (context) => EditProfileScreen(),//TODO page 4----- teacher edite page
@@ -40,6 +41,7 @@ Map<String, Widget Function(BuildContext)> routes = {
   //  '/': (context) => ClassScreen(),//TODO page 14 calss
   //  '/': (context) => ClassRoutineScreen(),//TODO page 14 calss routine page    main corse bakiiiii
   //  '/': (context) => AttendancePage(),//TODO page 15  attendance
+   '/': (context) => AttendanceScreen(),//TODO page 16  attendance teacher
 
 
 };
