@@ -3,22 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../component/title_build_textfield.dart';
 import 'component/IconBtton.dart';
+import 'component/dialogueBox.dart';
 
 class NewMessageScreen extends StatelessWidget {
   NewMessageScreen({super.key});
-
-  final List<Map<String, dynamic>> options = [
-    {
-      "icon": Icons.insert_drive_file,
-      "text": "Document",
-      "color": Colors.purple,
-    },
-    {"icon": Icons.camera_alt, "text": "Camera", "color": Colors.pink},
-    {"icon": Icons.photo, "text": "Gallery", "color": Colors.blue},
-    {"icon": Icons.person, "text": "Contact", "color": Colors.lightBlue},
-    {"icon": Icons.poll, "text": "Poll", "color": Colors.orange},
-    {"icon": Icons.event, "text": "Event", "color": Colors.green},
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -76,25 +64,38 @@ class NewMessageScreen extends StatelessWidget {
                                 width: 150,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
-                                  children: List.generate(
-                                    options.length,
-                                    (index) => ListTile(
-                                      leading: Icon(
-                                        options[index]['icon'],
-                                        color: options[index]['color'],
-                                      ),
-                                      title: Text(
-                                        options[index]['text'],
-                                        style: GoogleFonts.poppins(
-                                          textStyle: TextStyle(
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w500,
-                                            color: Colors.black,
-                                          ),
-                                        ),
-                                      ),
+                                  children: [
+                                    linkDialogueBox(
+                                      img: 'asset/img/D1.png',
+                                      title: 'Document',
+                                      context: context,
                                     ),
-                                  ),
+                                    linkDialogueBox(
+                                      img: 'asset/img/B_1.png',
+                                      title: 'Camera',
+                                      context: context,
+                                    ),
+                                    linkDialogueBox(
+                                      img: 'asset/img/G_1.png',
+                                      title: 'Gallery',
+                                      context: context,
+                                    ),
+                                    linkDialogueBox(
+                                      img: 'asset/img/Co_1.png',
+                                      title: 'Contact',
+                                      context: context,
+                                    ),
+                                    linkDialogueBox(
+                                      img: 'asset/img/P_1.png',
+                                      title: 'Poll',
+                                      context: context,
+                                    ),
+                                    linkDialogueBox(
+                                      img: 'asset/img/A1.png',
+                                      title: 'Event',
+                                      context: context,
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -138,4 +139,6 @@ class NewMessageScreen extends StatelessWidget {
       ),
     );
   }
+
+
 }
