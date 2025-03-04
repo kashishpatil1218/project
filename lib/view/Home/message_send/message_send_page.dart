@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_1/view/component/cancle_done_button.dart';
 
-class TeachersListScreen extends StatefulWidget {
+class MessageSendPage extends StatefulWidget {
   @override
-  _TeachersListScreenState createState() => _TeachersListScreenState();
+  _MessageSendPageState createState() => _MessageSendPageState();
 }
 
-class _TeachersListScreenState extends State<TeachersListScreen> {
+class _MessageSendPageState extends State<MessageSendPage> {
   List<Map<String, dynamic>> teachers = [
     {'name': 'Ashley', 'image': 'assets/teacher1.png', 'selected': false},
     {'name': 'Sarah Salmin', 'image': 'assets/teacher2.png', 'selected': false},
@@ -24,6 +24,8 @@ class _TeachersListScreenState extends State<TeachersListScreen> {
       'selected': false,
     },
     {'name': 'Mouza behind', 'image': 'assets/teacher6.png', 'selected': false},
+    {'name': 'Mouza behind', 'image': 'assets/teacher6.png', 'selected': false},
+    {'name': 'Mouza behind', 'image': 'assets/teacher6.png', 'selected': false},
   ];
 
   @override
@@ -31,7 +33,7 @@ class _TeachersListScreenState extends State<TeachersListScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Teachers',
+          'Send message to',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               fontSize: 20,
@@ -42,30 +44,47 @@ class _TeachersListScreenState extends State<TeachersListScreen> {
         ),
         centerTitle: true,
         leading: Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Color(0xff2E435B),
-          shape: BoxShape.circle,
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Color(0xff2E435B),
+              shape: BoxShape.circle,
+            ),
+            child: Image.asset('asset/img/MAIN.png'),
+          ),
         ),
-        child: Image.asset('asset/img/MAIN.png'),
-      ),
-    ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 35,
+              width: 35,
+              decoration: BoxDecoration(
+                color: Color(0xff2E435B),
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('asset/img/search_MAIN.png'),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
 
       body: Padding(
         padding: const EdgeInsets.only(top: 20),
-        child: Column(
-          children: [
-            Expanded(child: _buildTeachersList()),
-            _buildBottomButtons(),
-          ],
-        ),
+        child: Column(children: [Expanded(child: buildTeachersList())]),
+      ),
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+        backgroundColor: Color(0xff2E435B),
+        onPressed: () {},
+        child: Image.asset('asset/img/MESS.png'),
       ),
     );
   }
 
-  Widget _buildTeachersList() {
+  Widget buildTeachersList() {
     return ListView.builder(
       itemCount: teachers.length,
       itemBuilder: (context, index) {
@@ -119,7 +138,6 @@ class _TeachersListScreenState extends State<TeachersListScreen> {
                 ),
               ),
 
-
               CupertinoButton(
                 padding: EdgeInsets.zero,
                 onPressed: () {},
@@ -129,7 +147,7 @@ class _TeachersListScreenState extends State<TeachersListScreen> {
                     activeColor: Color(0xff2E435B),
 
                     focusColor: Color(0xff2E435B),
-                    side: BorderSide(color: Color(0xff2E435B), width:1 ),
+                    side: BorderSide(color: Color(0xff2E435B), width: 1),
                     value: teachers[index]['selected'],
                     onChanged: (bool? value) {
                       setState(() {
@@ -143,23 +161,6 @@ class _TeachersListScreenState extends State<TeachersListScreen> {
           ),
         );
       },
-    );
-  }
-
-  Widget _buildBottomButtons() {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 10,right: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            cancelButton(),
-            SizedBox(width: 20,),
-            doneButton(),
-          ],
-        ),
-      ),
     );
   }
 }

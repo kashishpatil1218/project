@@ -61,19 +61,7 @@ class _AttendanceScreenState extends State<AttendanceScreen> {
         ),
       ],
     ),
-      // body: ListView.builder(
-      //
-      //   padding: const EdgeInsets.all(10),
-      //   itemCount: teachers.length,
-      //   itemBuilder: (context, index) {
-      //
-      //     return TeacherCard(
-      //       name: teachers[index]["name"]!,
-      //       role: teachers[index]["role"]!,
-      //       image: teachers[index]["image"]!,
-      //     );
-      //   },
-      // ),
+
       body: ListView.builder(
         padding: const EdgeInsets.all(10),
         itemCount: teachers.length,

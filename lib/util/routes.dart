@@ -10,6 +10,7 @@ import '../view/Home/edite_page.dart';
 import '../view/Home/employee_edite_page.dart';
 import '../view/Home/employee_page.dart';
 import '../view/Home/heple_support_page.dart';
+import '../view/Home/message_send/message_send_page.dart';
 import '../view/Home/new message/new_message.dart';
 import '../view/Home/notice_board.dart';
 import '../view/Home/notice_page.dart';
@@ -45,7 +46,8 @@ Map<String, Widget Function(BuildContext)> routes = {
   //  '/': (context) => AttendancePage(),//TODO page 15  attendance
   //  '/': (context) => AttendanceScreen(),//TODO page 16  attendance teacher
   //  '/': (context) => AttendanceStudent(),//TODO page 17  attendance Student
-   '/': (context) => NewMessageScreen(),//TODO page 18  new message
+  //  '/': (context) => NewMessageScreen(),//TODO page 18  new message
+   '/': (context) => MessageSendPage(),//TODO page 19   message send
 
 
 };
