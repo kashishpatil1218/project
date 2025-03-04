@@ -2,9 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-class AttendanceScreen extends StatelessWidget {
+class AttendanceScreen extends StatefulWidget {
   AttendanceScreen({super.key});
 
+  @override
+  State<AttendanceScreen> createState() => _AttendanceScreenState();
+}
+
+class _AttendanceScreenState extends State<AttendanceScreen> {
   final List<Map<String, String>> teachers = [
     {"name": "Aisha Abd", "role": "Teacher", "image": "assets/aisha.jpg"},
     {"name": "Hessa Khalfan", "role": "Teacher", "image": "assets/hessa.jpg"},
@@ -16,54 +21,91 @@ class AttendanceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Attendance",
-          style: GoogleFonts.poppins(
-            textStyle: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Color(0xff2E435B),
-            ),
+      title: Text(
+        "Attendance",
+        style: GoogleFonts.poppins(
+          textStyle: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+            color: Color(0xff2E435B),
           ),
         ),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        centerTitle: true,
-        leading: Padding(
+      ),
+      backgroundColor: Colors.white,
+      elevation: 0,
+      centerTitle: true,
+      leading: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color(0xff2E435B),
+            shape: BoxShape.circle,
+          ),
+          child: Image.asset('asset/img/MAIN.png'),
+        ),
+      ),
+      actions: [
+        Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
+            height: 35,
+            width: 35,
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
               shape: BoxShape.circle,
-            ),
-            child: Image.asset('asset/img/MAIN.png'),
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: 35,
-              width: 35,
-              decoration: BoxDecoration(
-                color: Color(0xff2E435B),
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage('asset/img/search_MAIN.png'),
-                ),
+              image: DecorationImage(
+                image: AssetImage('asset/img/search_MAIN.png'),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
+    ),
+      // body: ListView.builder(
+      //
+      //   padding: const EdgeInsets.all(10),
+      //   itemCount: teachers.length,
+      //   itemBuilder: (context, index) {
+      //
+      //     return TeacherCard(
+      //       name: teachers[index]["name"]!,
+      //       role: teachers[index]["role"]!,
+      //       image: teachers[index]["image"]!,
+      //     );
+      //   },
+      // ),
       body: ListView.builder(
         padding: const EdgeInsets.all(10),
         itemCount: teachers.length,
         itemBuilder: (context, index) {
-          return TeacherCard(
-            name: teachers[index]["name"]!,
-            role: teachers[index]["role"]!,
-            image: teachers[index]["image"]!,
+          return Dismissible(
+            key: Key(teachers[index]["name"]!), // Unique Key
+            direction: DismissDirection.endToStart, // Right swipe to delete
+            onDismissed: (direction) {
+              setState(() {
+                teachers.removeAt(index); // Remove from list
+              });
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("${teachers[index]["name"]} deleted")),
+              );
+            },
+
+            // 🔴 Background Delete Icon
+            background: Container(
+              height: 36,
+              width: 36,
+             decoration: BoxDecoration(color: Colors.red,shape: BoxShape.circle),
+              // alignment: Alignment.centerRight,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Center(child: Icon(Icons.delete, color: Colors.white, size: 30)),
+            ),
+
+            child: TeacherCard(
+              name: teachers[index]["name"]!,
+              role: teachers[index]["role"]!,
+              image: teachers[index]["image"]!,
+            ),
           );
         },
       ),
@@ -164,9 +206,28 @@ class _TeacherCardState extends State<TeacherCard> {
                           _focusedDay = focusedDay;
                         });
                       },
+                      calendarFormat: CalendarFormat.month,
+                      availableCalendarFormats: {CalendarFormat.month: ''},
+                      headerStyle: HeaderStyle(
+                        formatButtonVisible: false,
+                        titleCentered: false,
+                        titleTextStyle: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          color: Colors.black,
+                        ),
+                        leftChevronIcon: Icon(
+                          Icons.chevron_left,
+                          color: Colors.black,
+                        ),
+                        rightChevronIcon: Icon(
+                          Icons.chevron_right,
+                          color: Colors.black,
+                        ),
+                      ),
+
                       calendarStyle: CalendarStyle(
                         selectedDecoration: BoxDecoration(
-
                           color: Colors.green,
                           shape: BoxShape.rectangle,
                         ),
@@ -207,7 +268,7 @@ class _TeacherCardState extends State<TeacherCard> {
                               ),
                             ),
                           ),
-                          SizedBox(width: 10,),
+                          SizedBox(width: 10),
                           Container(
                             height: 30,
                             width: 30,

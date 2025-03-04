@@ -10,10 +10,12 @@ import '../view/Home/edite_page.dart';
 import '../view/Home/employee_edite_page.dart';
 import '../view/Home/employee_page.dart';
 import '../view/Home/heple_support_page.dart';
+import '../view/Home/new message/new_message.dart';
 import '../view/Home/notice_board.dart';
 import '../view/Home/notice_page.dart';
 import '../view/Home/privicy_policy_page.dart';
 import '../view/Home/profile_page.dart';
+import '../view/Home/student_attendance.dart';
 import '../view/Home/student_edit_page.dart';
 import '../view/Home/subject_board.dart';
 import '../view/Home/subject_page.dart';
@@ -41,7 +43,9 @@ Map<String, Widget Function(BuildContext)> routes = {
   //  '/': (context) => ClassScreen(),//TODO page 14 calss
   //  '/': (context) => ClassRoutineScreen(),//TODO page 14 calss routine page    main corse bakiiiii
   //  '/': (context) => AttendancePage(),//TODO page 15  attendance
-   '/': (context) => AttendanceScreen(),//TODO page 16  attendance teacher
+  //  '/': (context) => AttendanceScreen(),//TODO page 16  attendance teacher
+  //  '/': (context) => AttendanceStudent(),//TODO page 17  attendance Student
+   '/': (context) => NewMessageScreen(),//TODO page 18  new message
 
 
 };
