@@ -13,10 +13,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
               color: Color(0xff2E435B),
               shape: BoxShape.circle,
             ),
-            child: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
-              onPressed: () => Navigator.pop(context),
-            ),
+            child: Image.asset('asset/img/MAIN.png'),
           ),
         ),
         title: Text(

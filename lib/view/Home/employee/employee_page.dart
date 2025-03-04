@@ -5,8 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class TeacherListScreen extends StatelessWidget {
-  const TeacherListScreen({super.key});
+class EmployeePage extends StatelessWidget {
+  const EmployeePage({super.key});
 
   final List<Map<String, String>> teachers = const [
     {"name": "Aisha Abd", "image": "https://via.placeholder.com/50"},
@@ -23,7 +23,7 @@ class TeacherListScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Teacher',
+          'Employee',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               fontSize: 20,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../component/cancle_done_button.dart';
+import '../../component/cancle_done_button.dart';
 
 class StudentEditPage extends StatefulWidget {
   @override
@@ -16,8 +16,19 @@ class _StudentEditPageState extends State<StudentEditPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        title: Text(
+          "Edit",
+          style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w600,
+              color: Color(0xff2E435B),
+            ),
+          ),
+        ),
         backgroundColor: Colors.white,
         elevation: 0,
+        centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -25,23 +36,9 @@ class _StudentEditPageState extends State<StudentEditPage> {
               color: Color(0xff2E435B),
               shape: BoxShape.circle,
             ),
-            child: IconButton(
-              icon: Icon(Icons.arrow_back_ios_sharp, color: Colors.white),
-              onPressed: () {},
-            ),
+            child: Image.asset('asset/img/MAIN.png'),
           ),
         ),
-        title: Text(
-          "Edit",
-          style: GoogleFonts.poppins(
-            textStyle: TextStyle(
-              color: Color(0xff2E435B),
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ),
-        centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),

@@ -9,7 +9,17 @@ class AttendancePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        title: Text(
+          'Attendance',
+          style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+              fontSize: 20,
+              color: Color(0xff2E435B),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        centerTitle: true,
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
@@ -17,23 +27,10 @@ class AttendancePage extends StatelessWidget {
               color: Color(0xff2E435B),
               shape: BoxShape.circle,
             ),
-            child: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
-              onPressed: () => Navigator.pop(context),
-            ),
+            child: Image.asset('asset/img/MAIN.png'),
           ),
         ),
-        title: Text(
-          'Attendance',
-          style: GoogleFonts.poppins(
-            textStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
-        ),
-        centerTitle: true,
+
       ),
       body: SingleChildScrollView(
         child: Padding(

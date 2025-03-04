@@ -5,8 +5,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class EmployeePage extends StatelessWidget {
-  const EmployeePage({super.key});
+class TeacherListScreen extends StatelessWidget {
+  const TeacherListScreen({super.key});
 
   final List<Map<String, String>> teachers = const [
     {"name": "Aisha Abd", "image": "https://via.placeholder.com/50"},
@@ -23,7 +23,7 @@ class EmployeePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Employee',
+          'Teacher',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               fontSize: 20,
@@ -40,14 +40,7 @@ class EmployeePage extends StatelessWidget {
               color: Color(0xff2E435B),
               shape: BoxShape.circle,
             ),
-            child: IconButton(
-              icon: const Icon(
-                Icons.arrow_back_ios,
-                color: Colors.white,
-                size: 20,
-              ),
-              onPressed: () {},
-            ),
+            child: Image.asset('asset/img/MAIN.png'),
           ),
         ),
         actions: [
@@ -121,15 +114,9 @@ class EmployeePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Color(0xff2E435B),
                         shape: BoxShape.circle,
+                        image: DecorationImage(image: AssetImage('asset/img/MES_T.png'))
                       ),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.messenger_outline,
-                          color: Colors.white,
-                          size: 15,
-                        ),
-                        onPressed: () {},
-                      ),
+                     
                     ),
                     Container(
                       height: 30,
@@ -137,15 +124,9 @@ class EmployeePage extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Color(0xff2E435B),
                         shape: BoxShape.circle,
+                        image: DecorationImage(image: AssetImage('asset/img/CALL.png'))
                       ),
-                      child: IconButton(
-                        icon: const Icon(
-                          Icons.add_ic_call_rounded,
-                          color: Colors.white,
-                          size: 15,
-                        ),
-                        onPressed: () {},
-                      ),
+
                     ),
                   ],
                 ),

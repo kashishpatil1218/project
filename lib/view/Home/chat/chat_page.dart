@@ -15,19 +15,14 @@ class ChatScreen extends StatelessWidget {
         title: Card(
           child: Row(
             children: [
-              IconButton(
-                icon: const Icon(
-                  Icons.arrow_back_ios_new_sharp,
-                  size: 18,
-                  color: Colors.black,
-                ),
-                onPressed: () {},
+              Image.asset(
+                'asset/img/arrow_CHAT_PAGE.png',
+                height: 50,
+                width: 50,
               ),
               const CircleAvatar(
                 // TODO Replace your profile here
-                backgroundImage: NetworkImage(
-                  "https://via.placeholder.com/50",
-                ),
+                backgroundImage: NetworkImage("https://via.placeholder.com/50"),
               ),
               const SizedBox(width: 10),
               Text(
@@ -39,24 +34,18 @@ class ChatScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-
               ),
-              SizedBox(width:60),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.video_call_outlined, color: Color(0xff2E435B)),
-              ),
-              IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.call, color: Color(0xff2E435B)),
-              ),
+              SizedBox(width: 80),
+              Image.asset('asset/img/CHAT_VIDEO_CALL.png'),
+              SizedBox(width: 25),
+              Image.asset('asset/img/CHAT_CALL.png'),
             ],
           ),
         ),
       ),
       body: Column(
         children: [
-          const Expanded(child: SizedBox()), 
+          const Expanded(child: SizedBox()),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
             decoration: BoxDecoration(
@@ -65,21 +54,17 @@ class ChatScreen extends StatelessWidget {
             ),
             child: Row(
               children: [
-                IconButton(
-                  icon: const Icon(Icons.attachment, color: Colors.grey),
-                  onPressed: () {},
-                ),
+                Image.asset('asset/img/Link.png'),
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
                     decoration: BoxDecoration(
                       color: Colors.grey.shade100,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: const TextField(
-                      
                       decoration: InputDecoration(
-                        suffixIcon: Icon(Icons.copy,color: Colors.grey,),
+                        suffixIcon: Icon(Icons.copy, color: Colors.grey),
                         hintText: "Write your message",
                         border: InputBorder.none,
                       ),
@@ -87,13 +72,11 @@ class ChatScreen extends StatelessWidget {
                   ),
                 ),
 
-                IconButton(
-                  icon: const Icon(Icons.camera_alt, color: Colors.grey),
-                  onPressed: () {},
-                ),
-                IconButton(
-                  icon: const Icon(Icons.mic, color: Colors.grey),
-                  onPressed: () {},
+                Image.asset('asset/img/CHAT_CAMERA.png'),
+                SizedBox(width: 20),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset('asset/img/CHAT_MIC.png'),
                 ),
               ],
             ),

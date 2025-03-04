@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SubjectScreen extends StatelessWidget {
-  const SubjectScreen({super.key});
+class ClassScreen extends StatelessWidget {
+  const ClassScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +17,11 @@ class SubjectScreen extends StatelessWidget {
               color: Color(0xff2E435B),
               shape: BoxShape.circle,
             ),
-            child: IconButton(
-              icon: Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
-              onPressed: () => Navigator.pop(context),
-            ),
+            child: Image.asset('asset/img/MAIN.png'),
           ),
         ),
         title: Text(
-          'Subject',
+          'Class Routine',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               color: Colors.black,
@@ -55,10 +52,9 @@ class SubjectScreen extends StatelessWidget {
                   ),
                 ),
                 children: [
-                  buildSubjectTile("English", "HSEC01"),
-                  buildSubjectTile("Mathematics", "HSEC02"),
-                  buildSubjectTile("Physics", "HSEC04"),
-                  buildSubjectTile("Chemistry", "HSEC05"),
+                  buildSubjectTile("Stander", "11th commerce"),
+                  buildSubjectTile("Stander", "12th commerce"),
+
                 ],
               ),
             ],
@@ -114,11 +110,11 @@ class SubjectScreen extends StatelessWidget {
       trailing: Text(
         code,
         style: GoogleFonts.poppins(
-    textStyle: TextStyle(
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-    color: Color(0xffB1B1B1),
-    ),),
+          textStyle: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w500,
+            color: Color(0xffB1B1B1),
+          ),),
       ),
       onTap: () {},
     );

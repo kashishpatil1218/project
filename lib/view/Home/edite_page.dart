@@ -22,37 +22,31 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Color(0xff2E435B),
-            ),
-            child: IconButton(
-              icon: const Icon(
-                Icons.arrow_back_ios_outlined,
-                color: Colors.white,
-                size: 20,
+        appBar: AppBar(
+          title: Text(
+            "Edit",
+            style: GoogleFonts.poppins(
+              textStyle: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                color: Color(0xff2E435B),
               ),
-              onPressed: () {},
+            ),
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          centerTitle: true,
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color(0xff2E435B),
+                shape: BoxShape.circle,
+              ),
+              child: Image.asset('asset/img/MAIN.png'),
             ),
           ),
         ),
-        title: Text(
-          "Edit",
-          style: GoogleFonts.poppins(
-            textStyle: TextStyle(
-              color: Color(0xff2E435B),
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-      ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(8),
         child: Column(
@@ -182,52 +176,6 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       ),
     );
   }
-
-  // Align labelsForTextField({required String label}) {
-  //   return Align(
-  //     alignment: Alignment.topLeft,
-  //     child: Padding(
-  //       padding: const EdgeInsets.only(top: 10, left: 10),
-  //       child: Text(
-  //         label,
-  //         style: GoogleFonts.poppins(
-  //           textStyle: TextStyle(
-  //             color: Color(0xff2E435B),
-  //             fontSize: 18,
-  //             fontWeight: FontWeight.w600,
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
-  //
-  // Widget buildTextField(String label, String hint, {int maxLines = 1}) {
-  //   return Padding(
-  //     padding: const EdgeInsets.symmetric(vertical: 4.0),
-  //     child: Card(
-  //       color: Colors.white,
-  //       child: Padding(
-  //         padding: const EdgeInsets.only(left: 8),
-  //         child: TextField(
-  //           style: GoogleFonts.poppins(
-  //             textStyle: TextStyle(
-  //               fontSize: 16,
-  //               fontWeight: FontWeight.w500,
-  //               color: Colors.black,
-  //             ),
-  //           ),
-  //           maxLines: maxLines,
-  //           decoration: InputDecoration(
-  //             labelText: label,
-  //             hintText: hint,
-  //             border: InputBorder.none,
-  //           ),
-  //         ),
-  //       ),
-  //     ),
-  //   );
-  // }
 
   Widget buildDropdown(
     String label,

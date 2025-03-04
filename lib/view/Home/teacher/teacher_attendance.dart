@@ -183,6 +183,7 @@ class _TeacherCardState extends State<TeacherCard> {
 
                       firstDay: DateTime.utc(2021, 1, 1),
                       lastDay: DateTime.utc(2030, 12, 31),
+                      daysOfWeekVisible: false,
                       focusedDay: DateTime.now(),
 
                       selectedDayPredicate: (day) {
@@ -277,9 +278,7 @@ class _TeacherCardState extends State<TeacherCard> {
                               ),
                             ),
                           ),
-                          // Icon(Icons.check_circle, color: Colors.green),
-                          // Icon(Icons.cancel, color: Colors.red),
-                          Icon(Icons.delete, color: Colors.grey),
+
                         ],
                       ),
                     ),

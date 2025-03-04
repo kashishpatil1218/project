@@ -61,19 +61,7 @@ class _AttendanceScreenState extends State<AttendanceStudent> {
           ),
         ],
       ),
-      // body: ListView.builder(
-      //
-      //   padding: const EdgeInsets.all(10),
-      //   itemCount: teachers.length,
-      //   itemBuilder: (context, index) {
-      //
-      //     return TeacherCard(
-      //       name: teachers[index]["name"]!,
-      //       role: teachers[index]["role"]!,
-      //       image: teachers[index]["image"]!,
-      //     );
-      //   },
-      // ),
+
       body: ListView.builder(
         padding: const EdgeInsets.all(10),
         itemCount: teachers.length,
@@ -196,6 +184,7 @@ class _TeacherCardState extends State<TeacherCard> {
               firstDay: DateTime.utc(2021, 1, 1),
               lastDay: DateTime.utc(2030, 12, 31),
               focusedDay: DateTime.now(),
+              daysOfWeekVisible: false,
 
               selectedDayPredicate: (day) {
                 return isSameDay(_selectedDay, day);
@@ -289,9 +278,8 @@ class _TeacherCardState extends State<TeacherCard> {
                       ),
                     ),
                   ),
-                  // Icon(Icons.check_circle, color: Colors.green),
-                  // Icon(Icons.cancel, color: Colors.red),
-                  Icon(Icons.delete, color: Colors.grey),
+
+
                 ],
               ),
             ),
