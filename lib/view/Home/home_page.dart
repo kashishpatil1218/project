@@ -112,8 +112,18 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               ),
             ),
             //Listt batavo
-            buildDrawerItem('asset/img/NOTICE_DR.png','Dashhhh'),
-
+            buildDrawerItem('asset/img/dash_dr.png', 'Dashboard'),
+            buildDrawerItem('asset/img/teacher_dr.png', 'Teachers'),
+            buildDrawerItem('asset/img/student_dr.png', 'Students'),
+            buildDrawerItem('asset/img/NOTICE_DR.png', 'Notice'),
+            buildDrawerItem('asset/img/SUBJECT_DR.png', 'Subject'),
+            buildDrawerItem('asset/img/CLASSROUTINE_DR.png', 'Class Routine'),
+            buildDrawerItem('asset/img/ATTENDANCE_DR.png', 'Attendance'),
+            buildDrawerItem('asset/img/MESSAGE_DR.png', 'Message'),
+            buildDrawerItem('asset/img/PROFILR_DR.png', 'Profile'),
+            buildDrawerItem('asset/img/PRIVACY_DR.png', 'Privacy'),
+            buildDrawerItem('asset/img/HEPL_DR.png', 'Help'),
+            buildDrawerItem('asset/img/LOGOUT_DR.png', 'Log out'),
           ],
         ),
       ),
@@ -700,9 +710,18 @@ Widget buildDrawerItem(String img, String title) {
       width: 30,
       decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
 
-      child: Image.asset(img,fit: BoxFit.cover,height: 24,width: 24,),
+      child: Image.asset(img, height: 20, width: 20),
     ),
-    title: Text(title, style: TextStyle(color: Colors.white)),
+    title: Text(
+      title,
+      style: GoogleFonts.poppins(
+        textStyle: TextStyle(
+          color: Colors.white,
+          fontSize: 14,
+          fontWeight: FontWeight.w400,
+        ),
+      ),
+    ),
     onTap: () {},
   );
 }
