@@ -1,22 +1,23 @@
 //Todo Darwer
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Widget buildDrawerItem(String img, String title) {
   return ListTile(
     leading: Container(
-      height: 30,
-      width: 30,
+      height: 30.h,
+      width: 30.w,
       decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
 
-      child: Image.asset(img, height: 20, width: 20),
+      child: Image.asset(img, height: 20.h, width: 20.w),
     ),
     title: Text(
       title,
       style: GoogleFonts.poppins(
         textStyle: TextStyle(
           color: Colors.white,
-          fontSize: 14,
+          fontSize: 14.sp,
           fontWeight: FontWeight.w400,
         ),
       ),
@@ -41,16 +42,16 @@ Drawer buildDrawer() {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(radius: 30),
-                SizedBox(width: 20),
+                CircleAvatar(radius: 29.r),
+                SizedBox(width: 20.w),
                 Padding(
-                  padding: const EdgeInsets.only(top: 18),
+                  padding:EdgeInsets.only(top:14.h),
                   child: Text(
                     'Hamda Said',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 18.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),

@@ -2,6 +2,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Widget dashBoardContainer({
@@ -10,46 +11,46 @@ Widget dashBoardContainer({
   required String img,
 }) {
   return Container(
-    height: 120,
+    height: 100.h,
     width: double.infinity,
     decoration: BoxDecoration(
       color: Colors.white,
       boxShadow: [
         BoxShadow(
           color: Colors.grey.shade300,
-          blurRadius: 2,
-          spreadRadius: 2,
+          blurRadius: 2.r,
+          spreadRadius: 2.r,
         ),
       ],
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(20.r),
     ),
     child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding:  EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
       child: ListTile(
         title: Text(
           title,
           style: GoogleFonts.poppins(
-            textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            textStyle: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w600),
             color: Color(0xff2E435B),
           ),
         ),
 
         subtitle: Padding(
-          padding: const EdgeInsets.only(top: 15, left: 5),
+          padding:EdgeInsets.only(top: 15.h, left: 5.w),
           child: Text(
             subTitle,
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
                 color: Color(0xff2E435B),
-                fontSize: 26,
+                fontSize: 24.sp,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
         ),
         trailing: Container(
-          height: 40,
-          width: 40,
+          height: 38.h,
+          width: 38.w,
           decoration: BoxDecoration(
             color: Color(0xff2E435B),
             shape: BoxShape.circle,

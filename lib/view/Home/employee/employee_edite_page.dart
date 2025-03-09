@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../component/cancle_done_button.dart';
@@ -20,7 +21,7 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
           "Edit",
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E435B),
             ),
@@ -30,7 +31,7 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
         elevation: 0,
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -41,26 +42,26 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding:  EdgeInsets.all(18.r),
         child: SingleChildScrollView(
           child: Column(
             children: [
               CircleAvatar(
-                radius: 50,
+                radius: 45.r,
                 backgroundImage: NetworkImage(
                   'https://randomuser.me/api/portraits/women/65.jpg',
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 20.h),
               buildTextField("Name", "Lily Al Yamahi"),
               buildTextField("Email", "xrobinson@aol.com"),
               buildTextField("Phone Number", "+966539293313"),
               buildTextField("Address", "53 Suwar Street, Thaqif"),
 
-              SizedBox(height:110),
+              SizedBox(height:80.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [cancelButton(), SizedBox(width: 20), doneButton()],
+                children: [cancelButton(), SizedBox(width: 20.w), doneButton()],
               ),
             ],
           ),
@@ -76,29 +77,29 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
         Text(
           label,
           style: GoogleFonts.poppins(
-            fontSize: 18,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w600,
             color: Color(0xff2E435B),
           ),
         ),
-        SizedBox(height: 5),
+        SizedBox(height: 5.h),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 4.0),
+          padding:  EdgeInsets.symmetric(vertical: 2.h),
           child: Card(
 
             color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding:  EdgeInsets.only(left: 8.w),
               child: TextField(
                 style: GoogleFonts.poppins(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   color: Colors.black,
                   fontWeight: FontWeight.w500,
                 ),
                 decoration: InputDecoration(
                   hintText: value,
                   hintStyle: GoogleFonts.poppins(
-                    fontSize: 16,
+                    fontSize: 13.sp,
                     color: Colors.black,
                     fontWeight: FontWeight.w500,
                   ),
@@ -108,7 +109,7 @@ class _EmployeeEditPageState extends State<EmployeeEditPage> {
             ),
           ),
         ),
-        SizedBox(height: 15),
+        SizedBox(height: 12.h),
       ],
     );
   }

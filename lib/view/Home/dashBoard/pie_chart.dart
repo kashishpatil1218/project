@@ -1,5 +1,6 @@
 //TODO piechart vado bottom Row
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -12,7 +13,7 @@ Widget studentChatRow({required String name, required String range}) {
         style: GoogleFonts.poppins(
           textStyle: TextStyle(
             color: Color(0xff2E435B),
-            fontSize: 18,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -22,7 +23,7 @@ Widget studentChatRow({required String name, required String range}) {
         style: GoogleFonts.poppins(
           textStyle: TextStyle(
             color: Color(0xff070707),
-            fontSize: 16,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
           ),
         ),
@@ -45,33 +46,34 @@ class ChartData {
 //TODO  student PieeChart
 Container buildStudentPieChart() {
   return Container(
-    height: 460,
+    height: 370.h,
     width: double.infinity,
     decoration: BoxDecoration(
       color: Colors.white,
       boxShadow: [
         BoxShadow(
           color: Colors.grey.shade300,
-          blurRadius: 2,
-          spreadRadius: 2,
+          blurRadius: 2.r,
+          spreadRadius: 2.r,
         ),
       ],
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(10.r),
     ),
     child: Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+      padding:  EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
       child: Column(
         children: [
-          SizedBox(height: 20),
+          SizedBox(height: 18.h),
           Text(
             'Students',
             style: GoogleFonts.poppins(
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E2E30),
             ),
           ),
           SfCircularChart(
+
             series: <CircularSeries>[
               DoughnutSeries<ChartData, String>(
                 dataSource: [
@@ -91,16 +93,16 @@ Container buildStudentPieChart() {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      height: 100,
-                      width: 100,
+                      height: 100.h,
+                      width: 100.w,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white,
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.shade200,
-                            spreadRadius: 2,
-                            blurRadius: 2,
+                            color: Colors.grey.shade300,
+                            spreadRadius: 3.r,
+                            blurRadius: 5.r,
                           ),
                         ],
                       ),
@@ -121,7 +123,7 @@ Container buildStudentPieChart() {
                             '100%',
                             style: GoogleFonts.poppins(
                               textStyle: TextStyle(
-                                fontSize: 26,
+                                fontSize: 20.sp,
                                 fontWeight: FontWeight.w700,
                                 color: Colors.black,
                               ),
@@ -136,12 +138,12 @@ Container buildStudentPieChart() {
             ],
           ),
 
-          Divider(thickness: 1),
+          Divider(thickness: 1.h),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               studentChatRow(name: 'Male Students', range: '75%'),
-              VerticalDivider(thickness: 5, color: Colors.black),
+              VerticalDivider(thickness: 5.h, color: Colors.black),
               studentChatRow(name: 'Female Students', range: '25%'),
             ],
           ),

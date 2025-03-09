@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -17,27 +18,28 @@ class ChatScreen extends StatelessWidget {
             children: [
               Image.asset(
                 'asset/img/arrow_CHAT_PAGE.png',
-                height: 50,
-                width: 50,
+                height: 42.h,
+                width: 42.w,
               ),
               const CircleAvatar(
                 // TODO Replace your profile here
                 backgroundImage: NetworkImage("https://via.placeholder.com/50"),
               ),
-              const SizedBox(width: 10),
+               SizedBox(width: 10.w),
               Text(
                 "Hamda Said",
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     color: Colors.black,
-                    fontSize: 16,
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-              SizedBox(width: 80),
+
+              SizedBox(width: 70.w),
               Image.asset('asset/img/CHAT_VIDEO_CALL.png'),
-              SizedBox(width: 25),
+              SizedBox(width: 20.w),
               Image.asset('asset/img/CHAT_CALL.png'),
             ],
           ),
@@ -47,7 +49,7 @@ class ChatScreen extends StatelessWidget {
         children: [
           const Expanded(child: SizedBox()),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+            padding:  EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border(top: BorderSide(color: Colors.grey.shade300)),
@@ -57,12 +59,12 @@ class ChatScreen extends StatelessWidget {
                 Image.asset('asset/img/Link.png'),
                 Expanded(
                   child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    padding:  EdgeInsets.symmetric(horizontal: 12.w),
                     decoration: BoxDecoration(
                       color: Colors.grey.shade100,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10.r),
                     ),
-                    child: const TextField(
+                    child:  TextField(
                       decoration: InputDecoration(
                         suffixIcon: Icon(Icons.copy, color: Colors.grey),
                         hintText: "Write your message",
@@ -73,9 +75,9 @@ class ChatScreen extends StatelessWidget {
                 ),
 
                 Image.asset('asset/img/CHAT_CAMERA.png'),
-                SizedBox(width: 20),
+                SizedBox(width: 20.w),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(8.0.r),
                   child: Image.asset('asset/img/CHAT_MIC.png'),
                 ),
               ],

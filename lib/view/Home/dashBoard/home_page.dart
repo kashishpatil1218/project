@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_1/view/Home/dashBoard/pie_chart.dart';
 
@@ -43,18 +44,18 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           },
           child: Image(
             image: AssetImage('asset/img/menu.png'),
-            height: 30,
-            width: 30,
+            height: 30.h,
+            width: 30.w,
           ),
         ),
         title: Image(image: AssetImage('asset/img/search.png')),
         actions: [
           Image(image: AssetImage('asset/img/notification.png')),
-          SizedBox(width: 25),
+          SizedBox(width: 25.w),
           Padding(
-            padding: const EdgeInsets.only(right: 20),
+            padding:  EdgeInsets.only(right: 20.w),
             child: CircleAvatar(
-              radius: 17,
+              radius: 17.r,
               backgroundImage: NetworkImage(
                 'https://static.vecteezy.com/system/resources/previews/042/332/098/non_2x/default-avatar-profile-icon-grey-photo-placeholder-female-no-photo-images-for-unfilled-user-profile-greyscale-illustration-for-socail-media-web-vector.jpg',
               ),
@@ -68,9 +69,9 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         scrollDirection: Axis.vertical,
         //TODO dhasboard
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding:  EdgeInsets.all(10.0.r),
           child: Column(
-            spacing: 20,
+            spacing: 20.h,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               dashBoardContainer(
@@ -99,26 +100,26 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               buildeNoticeBoard(),
               //TODo Evenet Calender
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding:  EdgeInsets.all(8.0.r),
                 child: Container(
-                  height: 657,
+                  height: 560.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.shade300,
-                        blurRadius: 2,
-                        spreadRadius: 2,
+                        blurRadius: 2.r,
+                        spreadRadius: 2.r,
                       ),
                     ],
-                    borderRadius: BorderRadius.circular(20),
+                    borderRadius: BorderRadius.circular(20.r),
                   ),
                   child: Column(
                     children: [
-                      SizedBox(height: 5),
+                      SizedBox(height: 5.h),
                       Padding(
-                        padding: const EdgeInsets.all(20),
+                        padding:  EdgeInsets.all(20.r),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -126,7 +127,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                               "Events Calendar",
                               style: GoogleFonts.poppins(
                                 textStyle: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 20.sp,
                                   fontWeight: FontWeight.w600,
                                   color: Color(0xff2E435B),
                                 ),
@@ -137,7 +138,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(20),
+                        padding:  EdgeInsets.all(20.r),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -147,14 +148,14 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                               '18Feb, 2024',
                               Colors.green,
                             ),
-                            SizedBox(height: 15),
+                            SizedBox(height: 15.h),
                             buildEventCard(
                               'Picnic',
                               'Students organize an exciting picnic',
                               '22Feb, 2024',
                               Colors.red,
                             ),
-                            SizedBox(height: 10),
+                            SizedBox(height: 10.h),
                             TableCalendar(
                               focusedDay: _focusedDay,
                               firstDay: DateTime.utc(2020, 1, 1),
@@ -175,7 +176,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
 
                                 titleTextStyle: GoogleFonts.poppins(
                                   textStyle: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 20.sp,
                                     fontWeight: FontWeight.w500,
                                     color: Colors.black,
                                   ),

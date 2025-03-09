@@ -2,28 +2,29 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Container buildeNoticeBoard() {
   return Container(
-    height: 400,
+    height: 320.h,
     width: double.infinity,
     decoration: BoxDecoration(
       color: Colors.white,
       boxShadow: [
         BoxShadow(
           color: Colors.grey.shade300,
-          blurRadius: 2,
-          spreadRadius: 2,
+          blurRadius: 2.r,
+          spreadRadius: 2.r,
         ),
       ],
-      borderRadius: BorderRadius.circular(20),
+      borderRadius: BorderRadius.circular(20.r),
     ),
     child: Column(
       children: [
-        SizedBox(height: 5),
+        SizedBox(height: 5.h),
         Padding(
-          padding: const EdgeInsets.all(20),
+          padding:  EdgeInsets.all(20.r),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -31,7 +32,7 @@ Container buildeNoticeBoard() {
                 "Notice Board",
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w600,
                     color: Color(0xff2E435B),
                   ),
@@ -42,7 +43,7 @@ Container buildeNoticeBoard() {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(10),
+          padding:  EdgeInsets.all(10.r),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -50,18 +51,18 @@ Container buildeNoticeBoard() {
                 ' NO',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w500,
                     color: Color(0xff2E435B),
                   ),
                 ),
               ),
-              SizedBox(width: 40),
+              SizedBox(width: 40.w),
               Text(
                 'ABOUT',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w500,
                     color: Color(0xff2E435B),
                   ),
@@ -79,7 +80,7 @@ Container buildeNoticeBoard() {
                   (index + 1).toString().padLeft(2, '0'),
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                       color: Color(0xff2E435B),
                     ),
@@ -88,21 +89,21 @@ Container buildeNoticeBoard() {
                 title: Row(
                   children: [
                     Container(
-                      height: 35,
-                      width: 35,
+                      height: 35.h,
+                      width: 35.w,
                       decoration: BoxDecoration(
                         color: Colors.black,
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(5.r),
                       ),
                     ),
-                    SizedBox(width: 10),
+                    SizedBox(width: 10.w),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           notices[index]['title']!,
                           style: GoogleFonts.poppins(
-                            fontSize: 16,
+                            fontSize: 16.sp,
                             fontWeight: FontWeight.w500,
                             color: Color(0xff2E435B),
                           ),
@@ -111,7 +112,7 @@ Container buildeNoticeBoard() {
                           maxLines: 1,
                           notices[index]['subtitle']!,
                           style: GoogleFonts.poppins(
-                            fontSize: 10,
+                            fontSize: 10.sp,
                             fontWeight: FontWeight.w400,
                             color: Color(0xff2E435B),
                           ),
