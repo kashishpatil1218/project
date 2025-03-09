@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_1/view/component/cancle_done_button.dart';
 
@@ -86,7 +87,7 @@ class NoticesBoardScreen extends StatelessWidget {
           "Notice Board",
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E435B),
             ),
@@ -96,7 +97,7 @@ class NoticesBoardScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -107,22 +108,22 @@ class NoticesBoardScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(16.0.r),
         child: Column(
           children: [
             // Header Row
             Padding(
-              padding: const EdgeInsets.all(10),
+              padding:  EdgeInsets.all(8.r),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text("NO", style: headerStyle()),
-                  SizedBox(width: 40),
+                  SizedBox(width: 32.w),
                   Text("ABOUT", style: headerStyle()),
                 ],
               ),
             ),
-            Divider(thickness: 1),
+            Divider(thickness: 1.w),
 
             // Notices List
             Expanded(
@@ -136,10 +137,10 @@ class NoticesBoardScreen extends StatelessWidget {
 
             // Bottom Buttons
             Padding(
-              padding: const EdgeInsets.only(bottom:10),
+              padding:  EdgeInsets.only(bottom:10.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [cancelButton(), SizedBox(width: 20), doneButton()],
+                children: [cancelButton(), SizedBox(width: 20.w), doneButton()],
               ),
             ),
           ],
@@ -151,7 +152,7 @@ class NoticesBoardScreen extends StatelessWidget {
   // Header Style
   TextStyle headerStyle() {
     return GoogleFonts.poppins(
-      fontSize: 16,
+      fontSize: 15.sp,
       fontWeight: FontWeight.w500,
       color: Color(0xff2E435B),
     );
@@ -160,47 +161,49 @@ class NoticesBoardScreen extends StatelessWidget {
   // Notice Item Widget
   Widget noticeItem(Map<String, String> notice) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding:  EdgeInsets.symmetric(vertical: 10.h),
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.all(10),
+            padding:  EdgeInsets.all(10.r),
             child: Text(
               notice["no"]!,
               style: GoogleFonts.poppins(
-                fontSize: 16,
+                fontSize: 14.sp,
                 color: Color(0xff2E435B),
                 fontWeight: FontWeight.w500,
               ),
             ),
           ),
-          SizedBox(width: 30),
+          SizedBox(width: 15.w),
           Container(
-            height: 32,
-            width: 32,
+            height: 30.h,
+            width: 32.w,
             decoration: BoxDecoration(
               color: Colors.blue.shade100,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadius.circular(5.r),
               image: DecorationImage(image: NetworkImage(notice["image"]!)),
             ),
           ),
 
-          SizedBox(width: 20),
+          SizedBox(width: 15.w),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
+                overflow: TextOverflow.ellipsis,
                 notice["title"]!,
                 style: GoogleFonts.poppins(
-                  fontSize: 16,
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff2E435B),
                 ),
               ),
               Text(
+                overflow: TextOverflow.ellipsis,
                 notice["desc"]!,
                 style: GoogleFonts.poppins(
-                  fontSize: 10,
+                  fontSize: 10.sp,
                   color: Color(0xff2E435B),
                   fontWeight: FontWeight.w400,
                 ),
@@ -212,40 +215,5 @@ class NoticesBoardScreen extends StatelessWidget {
     );
   }
 
-  // Cancel Button
-  // Widget cancelButton() {
-  //   return TextButton(
-  //     onPressed: () {},
-  //     style: TextButton.styleFrom(
-  //       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-  //     ),
-  //     child: Text(
-  //       "Cancel",
-  //       style: GoogleFonts.poppins(
-  //         fontSize: 14,
-  //         fontWeight: FontWeight.w500,
-  //         color: Colors.black,
-  //       ),
-  //     ),
-  //   );
-  // }
-  //
-  // // Done Button
-  // Widget doneButton() {
-  //   return ElevatedButton(
-  //     onPressed: () {},
-  //     style: ElevatedButton.styleFrom(
-  //       backgroundColor: Color(0xff2E435B),
-  //       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
-  //     ),
-  //     child: Text(
-  //       "Done",
-  //       style: GoogleFonts.poppins(
-  //         fontSize: 14,
-  //         fontWeight: FontWeight.w500,
-  //         color: Colors.white,
-  //       ),
-  //     ),
-  //   );
-  // }
+
 }

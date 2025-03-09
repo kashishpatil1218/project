@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:table_calendar/table_calendar.dart';
 
@@ -25,7 +26,7 @@ class _AttendanceScreenState extends State<AttendanceStudent> {
           "Attendance",
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E435B),
             ),
@@ -35,7 +36,7 @@ class _AttendanceScreenState extends State<AttendanceStudent> {
         elevation: 0,
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -46,10 +47,10 @@ class _AttendanceScreenState extends State<AttendanceStudent> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(8.0.r),
             child: Container(
-              height: 35,
-              width: 35,
+              height: 32.h,
+              width: 32.w,
               decoration: BoxDecoration(
                 color: Color(0xff2E435B),
                 shape: BoxShape.circle,
@@ -63,7 +64,7 @@ class _AttendanceScreenState extends State<AttendanceStudent> {
       ),
 
       body: ListView.builder(
-        padding: const EdgeInsets.all(10),
+        padding:  EdgeInsets.all(8.r),
         itemCount: teachers.length,
         itemBuilder: (context, index) {
           return Dismissible(
@@ -81,12 +82,12 @@ class _AttendanceScreenState extends State<AttendanceStudent> {
 
             // 🔴 Background Delete Icon
             background: Container(
-              height: 36,
-              width: 36,
+              height: 36.h,
+              width: 36.w,
               decoration: BoxDecoration(color: Colors.red,shape: BoxShape.circle),
               // alignment: Alignment.centerRight,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Center(child: Icon(Icons.delete, color: Colors.white, size: 30)),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Center(child: Icon(Icons.delete, color: Colors.white, size: 30.sp)),
             ),
 
             child: TeacherCard(
@@ -125,8 +126,8 @@ class _TeacherCardState extends State<TeacherCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.only(bottom: 10),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin:  EdgeInsets.only(bottom: 8.h),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.r)),
       child: ExpansionTile(
         onExpansionChanged: (value) {
           setState(() {
@@ -136,14 +137,14 @@ class _TeacherCardState extends State<TeacherCard> {
         title: Row(
           children: [
             Container(
-              height: 50,
-              width: 50,
+              height: 40.h,
+              width: 45.w,
               decoration: BoxDecoration(
                 color: Colors.blue.shade100,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10.r),
               ),
             ),
-            SizedBox(width: 10),
+            SizedBox(width: 10.w),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -151,7 +152,7 @@ class _TeacherCardState extends State<TeacherCard> {
                   widget.name,
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      fontSize: 20,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: Color(0xff2E435B),
                     ),
@@ -161,7 +162,7 @@ class _TeacherCardState extends State<TeacherCard> {
                   widget.role,
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      fontSize: 12,
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.w500,
                       color: Color(0xff2E435B),
                     ),
@@ -177,7 +178,7 @@ class _TeacherCardState extends State<TeacherCard> {
         isExpanded
             ? [
           Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding:  EdgeInsets.all(10.0.r),
             child: TableCalendar(
               currentDay: _selectedDay,
 
@@ -201,7 +202,7 @@ class _TeacherCardState extends State<TeacherCard> {
                 formatButtonVisible: false,
                 titleCentered: false,
                 titleTextStyle: TextStyle(
-                  fontSize: 24,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.w500,
                   color: Colors.black,
                 ),
@@ -228,18 +229,18 @@ class _TeacherCardState extends State<TeacherCard> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 15,
-              vertical: 5,
+            padding:  EdgeInsets.symmetric(
+              horizontal: 15.w,
+              vertical: 5.h,
             ),
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 20),
+              padding:  EdgeInsets.only(bottom: 20.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Container(
-                    height: 30,
-                    width: 30,
+                    height: 25.h,
+                    width: 25.w,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.red,
@@ -249,7 +250,7 @@ class _TeacherCardState extends State<TeacherCard> {
                         "A",
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                            fontSize: 15,
+                            fontSize: 12.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
                           ),
@@ -257,10 +258,10 @@ class _TeacherCardState extends State<TeacherCard> {
                       ),
                     ),
                   ),
-                  SizedBox(width: 10),
+                  SizedBox(width: 10.w),
                   Container(
-                    height: 30,
-                    width: 30,
+                    height: 25.h,
+                    width: 25.w,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: Colors.green,
@@ -270,7 +271,7 @@ class _TeacherCardState extends State<TeacherCard> {
                         "P",
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                            fontSize: 15,
+                            fontSize: 12.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
                           ),

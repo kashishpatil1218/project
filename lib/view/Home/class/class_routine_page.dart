@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ClassRoutineScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class ClassRoutineScreen extends StatelessWidget {
           "Class Routine",
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E435B),
             ),
@@ -30,7 +31,7 @@ class ClassRoutineScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -41,13 +42,13 @@ class ClassRoutineScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(14.0.r),
         child: Column(
           children: [
             // Table Headers
             Table(
               border: TableBorder(
-                bottom: BorderSide(width:1, color: Colors.grey.shade400),
+                bottom: BorderSide(width:1.w, color: Colors.grey.shade400),
               ),
               columnWidths: const {
                 0: FlexColumnWidth(2),
@@ -74,7 +75,7 @@ class ClassRoutineScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return Table(
                     border: TableBorder(
-                      bottom: BorderSide(width: 0.5, color: Colors.grey.shade300),
+                      bottom: BorderSide(width: 0.5.w, color: Colors.grey.shade300),
                     ),
                     columnWidths: const {
                       0: FlexColumnWidth(2),
@@ -110,10 +111,10 @@ class ClassRoutineScreen extends StatelessWidget {
   // Header Cell Widget
   Widget headerCell(String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:10),
+      padding:  EdgeInsets.symmetric(vertical:8.h),
       child: Text(
         text,
-        style: GoogleFonts.poppins(fontSize: 16, fontWeight: FontWeight.w500,color:Color(0xff2E435B) ),
+        style: GoogleFonts.poppins(fontSize: 14.sp, fontWeight: FontWeight.w500,color:Color(0xff2E435B) ),
         textAlign: TextAlign.center,
       ),
     );
@@ -122,10 +123,10 @@ class ClassRoutineScreen extends StatelessWidget {
   // Table Cell Widget
   Widget tableCell(String text) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12.0),
+      padding:  EdgeInsets.symmetric(vertical: 10.0.h),
       child: Text(
         text,
-        style: GoogleFonts.poppins(fontSize: 12,fontWeight: FontWeight.w500,color: Color(0xff2E435B)),
+        style: GoogleFonts.poppins(fontSize: 10.sp,fontWeight: FontWeight.w500,color: Color(0xff2E435B)),
         textAlign: TextAlign.center,
       ),
     );

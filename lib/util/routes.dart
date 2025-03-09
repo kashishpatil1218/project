@@ -27,14 +27,14 @@ import '../view/Home/teacher/teacher_attendance.dart';
 import '../view/Home/teacher/teachers_page.dart';
 
 Map<String, Widget Function(BuildContext)> routes = {
-  // '/': (context) => DashBoardScreen(), // 1   DASHBOARD
+  '/': (context) => DashBoardScreen(), // 1   DASHBOARD
   '/TeacherListScreen': (context) => TeacherListScreen(), //   TEACHER
   '/ ChatScreen': (context) => ChatScreen(), // CHAT
   '/EditProfileScreen': (context) => EditProfileScreen(), //   TEACHER EDITE
   '/StudentEditPage': (context) => StudentEditPage(), //      STUDENT EDITE
   '/EmployeeEditPage': (context) => EmployeeEditPage(), //   EMPLOYEE EDITE
-  '/': (context) => EmployeePage(), //  EMPLOYEE     EmployeePage
-  '/ProfileScreen': (context) => ProfileScreen(), // PROFILE
+  '/ EmployeePage': (context) => EmployeePage(), //  EMPLOYEE
+  '/  ProfileScreen': (context) => ProfileScreen(), // PROFILE
   '/PrivacyPolicyScreen': (context) => PrivacyPolicyScreen(), //    PRIVCY POLICY
   '/HelpSupportScreen': (context) => HelpSupportScreen(), //       HELP
   '/CreateNoticeScreen': (context) => CreateNoticeScreen(), //    NOTICE

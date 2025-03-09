@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SubjectScreen extends StatelessWidget {
@@ -11,7 +12,7 @@ class SubjectScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -25,7 +26,7 @@ class SubjectScreen extends StatelessWidget {
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -34,7 +35,7 @@ class SubjectScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding:  EdgeInsets.all(14.r),
           child: Column(
             children: [
               buildCategoryTile("Pre-Primary"),
@@ -45,7 +46,7 @@ class SubjectScreen extends StatelessWidget {
                   "Higher Secondary",
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      fontSize: 18,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                       color: Color(0xff2E435B),
                     ),
@@ -67,12 +68,12 @@ class SubjectScreen extends StatelessWidget {
 
   Widget buildCategoryTile(String title) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 8.h),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
         boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1),
+          BoxShadow(color: Colors.black12, blurRadius: 5.r, spreadRadius: 1.r),
         ],
       ),
       child: ListTile(
@@ -80,7 +81,7 @@ class SubjectScreen extends StatelessWidget {
           title,
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 18,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E435B),
             ),
@@ -88,7 +89,7 @@ class SubjectScreen extends StatelessWidget {
         ),
         trailing: Icon(
           Icons.arrow_forward_ios,
-          size: 16,
+          size: 14.sp,
           color: Color(0xff2E435B),
         ),
         onTap: () {},
@@ -102,7 +103,7 @@ class SubjectScreen extends StatelessWidget {
         subject,
         style: GoogleFonts.poppins(
           textStyle: TextStyle(
-            fontSize: 16,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w500,
             color: Color(0xff2E435B),
           ),
@@ -112,7 +113,7 @@ class SubjectScreen extends StatelessWidget {
         code,
         style: GoogleFonts.poppins(
     textStyle: TextStyle(
-    fontSize: 16,
+    fontSize: 14.sp,
     fontWeight: FontWeight.w500,
     color: Color(0xffB1B1B1),
     ),),

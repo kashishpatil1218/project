@@ -2,14 +2,15 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Widget cancelButton() {
   return GestureDetector(
     onTap: () {},
     child: Container(
-      height: 50,
-      width: 110,
+      height: 40.h,
+      width: 100.w,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Color(0xff2E435B)),
@@ -20,7 +21,7 @@ Widget cancelButton() {
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               color: Color(0xff2E435B),
-              fontSize: 16,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -36,8 +37,8 @@ Widget doneButton() {
   return GestureDetector(
     onTap: () {},
     child: Container(
-      height: 50,
-      width: 110,
+      height: 40.h,
+      width: 100.w,
       decoration: BoxDecoration(
         color: Color(0xff2E435B),
         borderRadius: BorderRadius.circular(10),
@@ -48,7 +49,7 @@ Widget doneButton() {
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
           ),

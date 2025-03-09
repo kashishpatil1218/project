@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:project_1/view/component/cancle_done_button.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -20,7 +21,7 @@ class _MyEarningsScreenState extends State<MyEarningsScreen> {
           'My Earnings',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               color: Color(0xff2E435B),
               fontWeight: FontWeight.bold,
             ),
@@ -28,7 +29,7 @@ class _MyEarningsScreenState extends State<MyEarningsScreen> {
         ),
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -37,10 +38,9 @@ class _MyEarningsScreenState extends State<MyEarningsScreen> {
             child: Image.asset('asset/img/MAIN.png'),
           ),
         ),
-
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: EdgeInsets.all(14.0.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -48,24 +48,24 @@ class _MyEarningsScreenState extends State<MyEarningsScreen> {
               "This month",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
                   color: Colors.green,
                 ),
               ),
             ),
-            SizedBox(height: 5),
+            SizedBox(height: 5.h),
             Text(
               "₹ 13,446",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  fontSize: 48,
+                  fontSize: 42.sp,
                   fontWeight: FontWeight.w700,
                   color: Color(0xff2E435B),
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 18.h),
             // Calendar
             TableCalendar(
               focusedDay: _focusedDay,
@@ -96,39 +96,62 @@ class _MyEarningsScreenState extends State<MyEarningsScreen> {
                 formatButtonVisible: false,
                 titleCentered: true,
                 titleTextStyle: GoogleFonts.poppins(
-                  fontSize: 24,
+                  fontSize: 22.sp,
                   fontWeight: FontWeight.w500,
                   color: Color(0xff2E435B),
                 ),
-                leftChevronIcon: Icon(Icons.chevron_left, color: Color(0xff2E435B)),
-                rightChevronIcon: Icon(Icons.chevron_right, color: Color(0xff2E435B)),
+                leftChevronIcon: Icon(
+                  Icons.chevron_left,
+                  color: Color(0xff2E435B),
+                ),
+                rightChevronIcon: Icon(
+                  Icons.chevron_right,
+                  color: Color(0xff2E435B),
+                ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 20.h),
             // Buttons
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: 50,
-                  width: 50,
-                  decoration: BoxDecoration(color: Colors.white),
-                  child: Image.asset('asset/img/catppuccin_pdf.png')
+                  height: 45.h,
+                  width: 50.w,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade300,
+                        spreadRadius: 2.r,
+                        blurRadius: 5.r,
+                      ),
+                    ],
+                  ),
+                  child: Image.asset('asset/img/catppuccin_pdf.png'),
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 20.w),
                 Container(
-                    height: 50,
-                    width: 50,
-                    decoration: BoxDecoration(color: Colors.white),
-                    child: Image.asset('asset/img/DOWNLOAD.png')
+                  height: 45.h,
+                  width: 50.w,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10.r),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade300,
+                        spreadRadius: 2.r,
+                        blurRadius: 5.r,
+                      ),
+                    ],
+                  ),
+                  child: Image.asset('asset/img/DOWNLOAD.png'),
                 ),
               ],
             ),
             Spacer(),
-            Align(
-              alignment: Alignment.bottomRight,
-                child: doneButton()),
-
+            Align(alignment: Alignment.bottomRight, child: doneButton()),
           ],
         ),
       ),

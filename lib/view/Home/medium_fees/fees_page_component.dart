@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //DROPDOWN WIDGET
@@ -9,7 +10,7 @@ Widget dropdownButton(
   ValueChanged<String?> onChanged,
 ) {
   return Container(
-    padding: EdgeInsets.symmetric(horizontal: 12),
+    padding: EdgeInsets.symmetric(horizontal: 12.w),
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(10),
       border: Border.all(color: Colors.grey.shade300),
@@ -26,7 +27,7 @@ Widget dropdownButton(
                 child: Text(
                   value,
                   style: GoogleFonts.poppins(
-                    fontSize: 16,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w500,
                     color: Color(0xff2E435B),
                   ),
@@ -43,16 +44,16 @@ Widget studentCard(Map<String, String> student) {
   return Card(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
     elevation: 1,
-    margin: EdgeInsets.symmetric(vertical: 8),
+    margin: EdgeInsets.symmetric(vertical: 8.h),
     child: Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding:  EdgeInsets.all(8.0.r),
       child: ListTile(
         leading: Container(
-          height: 60,
-          width: 60,
+          height: 55.h,
+          width: 58.w,
           decoration: BoxDecoration(
             color: Colors.blue.shade100,
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(10.r),
             image: DecorationImage(
               fit: BoxFit.cover,
               image: NetworkImage(student["image"]!),
@@ -62,7 +63,7 @@ Widget studentCard(Map<String, String> student) {
         title: Text(
           student["name"]!,
           style: GoogleFonts.poppins(
-            fontSize: 16,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
             color: Color(0xff2E435B),
           ),
@@ -70,7 +71,7 @@ Widget studentCard(Map<String, String> student) {
         subtitle: Text(
           "Roll No : ${student["roll"]}",
           style: GoogleFonts.poppins(
-            fontSize: 14,
+            fontSize: 12.sp,
             color: Color(0xffACA9A9),
             fontWeight: FontWeight.w400,
           ),

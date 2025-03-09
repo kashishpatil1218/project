@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../component/title_build_textfield.dart';
@@ -16,7 +17,7 @@ class NewMessageScreen extends StatelessWidget {
           "New Message",
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E435B),
             ),
@@ -26,7 +27,7 @@ class NewMessageScreen extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -37,16 +38,16 @@ class NewMessageScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(14.0.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildTextField("To", "Enter the name"),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             buildTextField("Subject", "Enter subject"),
-            SizedBox(height: 10),
+            SizedBox(height: 10.h),
             buildTextField("Message", "Enter message", maxLines: 4),
-            SizedBox(height: 15),
+            SizedBox(height: 15.h),
             Row(
               children: [
                 GestureDetector(
@@ -56,12 +57,12 @@ class NewMessageScreen extends StatelessWidget {
                       builder:
                           (context) => Dialog(
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15),
+                              borderRadius: BorderRadius.circular(15.r),
                             ),
                             child: Padding(
-                              padding: EdgeInsets.all(15),
+                              padding: EdgeInsets.all(15.r),
                               child: Container(
-                                width: 150,
+                                width: 150.w,
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
@@ -104,7 +105,7 @@ class NewMessageScreen extends StatelessWidget {
                   },
                   child: iconButton('asset/img/Link.png', Colors.blue),
                 ),
-                SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 iconButton('asset/img/DELETE.png', Colors.red),
               ],
             ),
@@ -113,18 +114,18 @@ class NewMessageScreen extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: Container(
-                  height: 50,
-                  width: 110,
+                  height: 50.h,
+                  width: 110.w,
                   decoration: BoxDecoration(
                     color: Color(0xff2E435B),
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(10.r),
                   ),
                   child: Center(
                     child: Text(
                       'Send',
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                          fontSize: 16,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w500,
                           color: Colors.white,
                         ),

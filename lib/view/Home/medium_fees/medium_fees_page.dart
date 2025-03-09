@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MediumFeesPage extends StatelessWidget {
@@ -13,7 +14,7 @@ class MediumFeesPage extends StatelessWidget {
           'Medium',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               color: Color(0xff2E435B),
               fontWeight: FontWeight.bold,
             ),
@@ -21,7 +22,7 @@ class MediumFeesPage extends StatelessWidget {
         ),
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -34,7 +35,7 @@ class MediumFeesPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding:  EdgeInsets.all(14.0.sp),
           child: Column(
             children: [
               buildCategoryTile("English Medium"),
@@ -50,12 +51,12 @@ class MediumFeesPage extends StatelessWidget {
 
   Widget buildCategoryTile(String title) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      margin: EdgeInsets.only(bottom: 10.h),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(10.r),
         boxShadow: [
-          BoxShadow(color: Colors.black12, blurRadius: 5, spreadRadius: 1),
+          BoxShadow(color: Colors.grey.shade300, blurRadius: 5.r, spreadRadius: 1.r),
         ],
       ),
       child: ListTile(
@@ -63,7 +64,7 @@ class MediumFeesPage extends StatelessWidget {
           title,
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 18,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w600,
               color: Color(0xff2E435B),
             ),
@@ -71,7 +72,7 @@ class MediumFeesPage extends StatelessWidget {
         ),
         trailing: Icon(
           Icons.arrow_forward_ios,
-          size: 16,
+          size: 14.sp,
           color: Color(0xff2E435B),
         ),
         onTap: () {},

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'fees_page_component.dart';
@@ -20,7 +21,7 @@ class _FeesScreenState extends State<FeesScreen> {
           'Fees',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              fontSize: 20,
+              fontSize: 18.sp,
               color: Color(0xff2E435B),
               fontWeight: FontWeight.bold,
             ),
@@ -28,7 +29,7 @@ class _FeesScreenState extends State<FeesScreen> {
         ),
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -39,7 +40,7 @@ class _FeesScreenState extends State<FeesScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(14.0.r),
         child: Column(
           children: [
             // Dropdown Buttons
@@ -70,24 +71,24 @@ class _FeesScreenState extends State<FeesScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 8.h),
 
             // Search Button
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(8.0.r),
               child: Container(
-                height: 49,
+                height: 44.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Color(0xff2E435B),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                 ),
                 child: Center(
                   child: Text(
                     'Search',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
@@ -96,7 +97,7 @@ class _FeesScreenState extends State<FeesScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 10.h),
 
             // Students List
             Expanded(

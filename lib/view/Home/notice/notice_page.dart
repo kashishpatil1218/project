@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:project_1/view/component/cancle_done_button.dart';
@@ -26,12 +27,12 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
             colorScheme: ColorScheme.light(
               primary: Colors.green,
               // Header background color
-              onPrimary: Colors.white, // Header text color
-              onSurface: Colors.black, // Normal text color
+              onPrimary: Colors.white,
+              onSurface: Colors.black,
             ),
             textButtonTheme: TextButtonThemeData(
               style: TextButton.styleFrom(
-                foregroundColor: Color(0xff2E435B), // Button color
+                foregroundColor: Color(0xff2E435B),
               ),
             ),
           ),
@@ -53,7 +54,7 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(8.0.r),
           child: Container(
             decoration: BoxDecoration(
               color: Color(0xff2E435B),
@@ -67,7 +68,7 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               color: Colors.black,
-              fontSize: 20,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -75,17 +76,17 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(14.0.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
+            SizedBox(height: 18.h),
             titleForTxtfield(title: 'Title'),
-            SizedBox(height: 5),
+            SizedBox(height: 4.h),
             Card(
               color: Colors.white,
               child: Padding(
-                padding: const EdgeInsets.all(5),
+                padding:  EdgeInsets.all(5.r),
                 child: TextField(
                   style: TextStyle(color: Color(0xff2E435B),),
                   controller: txtTitle,
@@ -94,7 +95,7 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
                     hintStyle: GoogleFonts.poppins(
                       textStyle: TextStyle(
                         color: Color(0xffB1B1B1),
-                        fontSize: 16,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -103,13 +104,13 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 18.h),
             titleForTxtfield(title: 'Subtitle'),
-            SizedBox(height: 5),
+            SizedBox(height: 4.h),
             Card(
               color: Colors.white,
               child: Padding(
-                padding: const EdgeInsets.all(5),
+                padding:  EdgeInsets.all(5.r),
                 child: TextField(
                   style: TextStyle(color: Color(0xff2E435B),),
                   controller: txtSubtitle,
@@ -118,7 +119,7 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
                     hintStyle: GoogleFonts.poppins(
                       textStyle: TextStyle(
                         color: Color(0xffB1B1B1),
-                        fontSize: 16,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -127,9 +128,9 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 18.h),
             titleForTxtfield(title: 'Date'),
-            SizedBox(height: 5),
+            SizedBox(height: 4.h),
 
             // Date Picker Field
             Card(
@@ -143,7 +144,7 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
                     // suffixIcon: Icon(Icons.calendar_today, color: Color(0xff2E435B)),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding:  EdgeInsets.all(8.0.r),
                     child: Text(
                       _selectedDate == null
                           ? "Select Date"
@@ -151,7 +152,7 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
                           color: Color(0xff2E435B),
-                          fontSize: 16,
+                          fontSize: 14.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -163,12 +164,12 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
 
             Spacer(),
             Padding(
-              padding: const EdgeInsets.only(bottom: 10, right: 10),
+              padding:  EdgeInsets.only(bottom: 10.h, right: 10.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   GestureDetector(onTap: () {}, child: cancelButton()),
-                  SizedBox(width: 20),
+                  SizedBox(width: 20.w),
                   GestureDetector(onTap: () {}, child: doneButton()),
                 ],
               ),
@@ -185,7 +186,7 @@ class _CreateNoticeScreenState extends State<CreateNoticeScreen> {
       style: GoogleFonts.poppins(
         textStyle: TextStyle(
           color: Color(0xff2E435B),
-          fontSize: 16,
+          fontSize: 15.sp,
           fontWeight: FontWeight.w600,
         ),
       ),
