@@ -46,7 +46,7 @@ class ChartData {
 //TODO  student PieeChart
 Container buildStudentPieChart() {
   return Container(
-    height: 370.h,
+    height: 380.h,
     width: double.infinity,
     decoration: BoxDecoration(
       color: Colors.white,
@@ -60,7 +60,7 @@ Container buildStudentPieChart() {
       borderRadius: BorderRadius.circular(10.r),
     ),
     child: Padding(
-      padding:  EdgeInsets.symmetric(vertical: 10.h, horizontal: 15.w),
+      padding:  EdgeInsets.symmetric(vertical: 10.h, horizontal: 12.w),
       child: Column(
         children: [
           SizedBox(height: 18.h),

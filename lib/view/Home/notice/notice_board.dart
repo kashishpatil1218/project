@@ -187,28 +187,32 @@ class NoticesBoardScreen extends StatelessWidget {
           ),
 
           SizedBox(width: 15.w),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                overflow: TextOverflow.ellipsis,
-                notice["title"]!,
-                style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff2E435B),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  overflow: TextOverflow.ellipsis,
+                  notice["title"]!,
+                  style: GoogleFonts.poppins(
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff2E435B),
+                  ),
                 ),
-              ),
-              Text(
-                overflow: TextOverflow.ellipsis,
-                notice["desc"]!,
-                style: GoogleFonts.poppins(
-                  fontSize: 10.sp,
-                  color: Color(0xff2E435B),
-                  fontWeight: FontWeight.w400,
+                SizedBox(height: 2.h),
+                Text(
+            maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  notice["desc"]!,
+                  style: GoogleFonts.poppins(
+                    fontSize: 10.sp,
+                    color: Color(0xff2E435B),
+                    fontWeight: FontWeight.w400,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),

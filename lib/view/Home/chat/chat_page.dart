@@ -14,6 +14,7 @@ class ChatScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         title: Card(
+          color: Colors.white,
           child: Row(
             children: [
               Image.asset(
@@ -25,7 +26,7 @@ class ChatScreen extends StatelessWidget {
                 // TODO Replace your profile here
                 backgroundImage: NetworkImage("https://via.placeholder.com/50"),
               ),
-               SizedBox(width: 10.w),
+               SizedBox(width: 8.w),
               Text(
                 "Hamda Said",
                 style: GoogleFonts.poppins(
@@ -37,9 +38,9 @@ class ChatScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(width: 70.w),
+              SizedBox(width: 60.w),
               Image.asset('asset/img/CHAT_VIDEO_CALL.png'),
-              SizedBox(width: 20.w),
+              SizedBox(width: 14.w),
               Image.asset('asset/img/CHAT_CALL.png'),
             ],
           ),
@@ -74,10 +75,11 @@ class ChatScreen extends StatelessWidget {
                   ),
                 ),
 
+                SizedBox(width: 5.w,),
                 Image.asset('asset/img/CHAT_CAMERA.png'),
-                SizedBox(width: 20.w),
+                SizedBox(width: 15.w),
                 Padding(
-                  padding:  EdgeInsets.all(8.0.r),
+                  padding:  EdgeInsets.all(8.r),
                   child: Image.asset('asset/img/CHAT_MIC.png'),
                 ),
               ],

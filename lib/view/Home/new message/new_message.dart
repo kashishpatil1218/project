@@ -12,6 +12,7 @@ class NewMessageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "New Message",
@@ -40,6 +41,7 @@ class NewMessageScreen extends StatelessWidget {
       body: Padding(
         padding:  EdgeInsets.all(14.0.r),
         child: Column(
+          mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             buildTextField("To", "Enter the name"),
@@ -48,66 +50,68 @@ class NewMessageScreen extends StatelessWidget {
             SizedBox(height: 10.h),
             buildTextField("Message", "Enter message", maxLines: 4),
             SizedBox(height: 15.h),
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    showDialog(
-                      context: context,
-                      builder:
-                          (context) => Dialog(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.r),
-                            ),
-                            child: Padding(
-                              padding: EdgeInsets.all(15.r),
-                              child: Container(
-                                width: 150.w,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    linkDialogueBox(
-                                      img: 'asset/img/D1.png',
-                                      title: 'Document',
-                                      context: context,
-                                    ),
-                                    linkDialogueBox(
-                                      img: 'asset/img/B_1.png',
-                                      title: 'Camera',
-                                      context: context,
-                                    ),
-                                    linkDialogueBox(
-                                      img: 'asset/img/G_1.png',
-                                      title: 'Gallery',
-                                      context: context,
-                                    ),
-                                    linkDialogueBox(
-                                      img: 'asset/img/Co_1.png',
-                                      title: 'Contact',
-                                      context: context,
-                                    ),
-                                    linkDialogueBox(
-                                      img: 'asset/img/P_1.png',
-                                      title: 'Poll',
-                                      context: context,
-                                    ),
-                                    linkDialogueBox(
-                                      img: 'asset/img/A1.png',
-                                      title: 'Event',
-                                      context: context,
-                                    ),
-                                  ],
+            Expanded(
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder:
+                            (context) => Dialog(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15.r),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(15.r),
+                                child: Container(
+                                  width: 150.w,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: [
+                                      linkDialogueBox(
+                                        img: 'asset/img/D1.png',
+                                        title: 'Document',
+                                        context: context,
+                                      ),
+                                      linkDialogueBox(
+                                        img: 'asset/img/B_1.png',
+                                        title: 'Camera',
+                                        context: context,
+                                      ),
+                                      linkDialogueBox(
+                                        img: 'asset/img/G_1.png',
+                                        title: 'Gallery',
+                                        context: context,
+                                      ),
+                                      linkDialogueBox(
+                                        img: 'asset/img/Co_1.png',
+                                        title: 'Contact',
+                                        context: context,
+                                      ),
+                                      linkDialogueBox(
+                                        img: 'asset/img/P_1.png',
+                                        title: 'Poll',
+                                        context: context,
+                                      ),
+                                      linkDialogueBox(
+                                        img: 'asset/img/A1.png',
+                                        title: 'Event',
+                                        context: context,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
-                    );
-                  },
-                  child: iconButton('asset/img/Link.png', Colors.blue),
-                ),
-                SizedBox(width: 10.w),
-                iconButton('asset/img/DELETE.png', Colors.red),
-              ],
+                      );
+                    },
+                    child: iconButton('asset/img/Link.png', Colors.blue),
+                  ),
+                  SizedBox(width: 10.w),
+                  iconButton('asset/img/DELETE.png', Colors.red),
+                ],
+              ),
             ),
             Spacer(),
             SizedBox(

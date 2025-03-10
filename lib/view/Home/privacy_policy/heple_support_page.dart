@@ -114,7 +114,7 @@ class HelpSupportScreen extends StatelessWidget {
         title,
         style: GoogleFonts.poppins(
           fontWeight: FontWeight.w500,
-          fontSize: 17.sp,
+          fontSize: 15.sp,
           color: Colors.black,
         ),
       ),
@@ -137,7 +137,7 @@ class HelpSupportScreen extends StatelessWidget {
               text,
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w400,
-                fontSize: 13.sp,
+                fontSize: 11.sp,
                 color: Colors.black,
               ),
             ),

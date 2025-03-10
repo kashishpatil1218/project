@@ -77,6 +77,7 @@ Container buildeNoticeBoard() {
             itemBuilder: (context, index) {
               return ListTile(
                 leading: Text(
+                  overflow: TextOverflow.ellipsis,
                   (index + 1).toString().padLeft(2, '0'),
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
@@ -101,6 +102,7 @@ Container buildeNoticeBoard() {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
+                          overflow: TextOverflow.ellipsis,
                           notices[index]['title']!,
                           style: GoogleFonts.poppins(
                             fontSize: 16.sp,
@@ -109,10 +111,11 @@ Container buildeNoticeBoard() {
                           ),
                         ),
                         Text(
+                          overflow: TextOverflow.ellipsis,
                           maxLines: 1,
                           notices[index]['subtitle']!,
                           style: GoogleFonts.poppins(
-                            fontSize: 10.sp,
+                            fontSize: 8.sp,
                             fontWeight: FontWeight.w400,
                             color: Color(0xff2E435B),
                           ),
